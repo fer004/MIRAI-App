@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+    <aside>
+        <div class="metadata">
+            <p><b>Nombre Paciente:</b> <span id="metaPatientName">N/A</span></p>
+            <p><b>ID Paciente:</b> <span id="metaPatientID">N/A</span></p>
+            <p><b>Fecha Estudio:</b> <span id="metaStudyDate">N/A</span></p>
+            <p><b>Edad:</b> <span id="metaPatientAge">N/A</span></p>
+            <p><b>Sexo:</b> <span id="metaPatientSex">N/A</span></p>
+            <p><b>Modalidad:</b> <span id="metaModality">N/A</span></p>
+            <p><b>Parte Examinada:</b> <span id="metaBodyPart">N/A</span></p>
+            <p><b>Tamaño Archivo:</b> <span id="metaFileSize">N/A</span></p>
+            <div id="uploadStatus"></div>
+        </div>
+        <div class="manager">
+            <div class="button-grid">
+                <div class="drop-zone" id="dropZone">
+                    <span class="drop-zone__prompt"></span>
+                    <input type="file" name="file" id="fileInput" class="drop-zone__input" accept=".dcm,.dicom" multiple>
+                    <label for="fileInput">Subir DICOM</label>
+                </div>
+                <div class="pdf-input">
+                    <form id="pdfUploadForm" method="POST" action="/upload_pdf" enctype="multipart/form-data">
+                        <label for="pdf1">PDF 1:</label>
+                        <input type="file" id="pdf1Input" name="pdf1" accept=".pdf" required> <label for="pdf2">PDF 2:</label>
+                        <input type="file" id="pdf2Input" name="pdf2" accept=".pdf" required> <button type="submit">Subir PDF</button>
+                        <div id="pdfUploadStatus" style="margin-top: 10px;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <article>
+        <div class="display">
+            <div class="results">
+                <h2>Resultado:</h2>
+                <div class="drop-zone" id="processDataButtonContainer" style="margin-bottom: 20px;">
+                    <button id="processRecentDicomButton" style="background: none; border: none; color: inherit; font: inherit; cursor: pointer; width: 100%; height: 100%;">
+                        <span class="drop-zone__prompt">Procesar DICOMs Recientes</span>
+                    </button>
+                </div>
+
+                <div id="dockerResults">
+                    {% if result %}
+                        <p style="font-size: 1.2em; font-weight: bold; margin-bottom: 5px;">Predicción: ${percentage}%</p>
+                        <p style="font-size: 1.5em; font-weight: bold; color: ${riskMessage === 'ALTO RIESGO' ? 'red' : 'green'};">${riskMessage}</p>
+                        <p style="font-size: 0.9em; color: #666; margin-top: 10px;">(Raw value: ${fifthPrediction})</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <footer class="planes">
+            <div class="plane"></div>
+            <div class="plane"></div>
+            <div class="plane"></div>
+            <div class="plane"></div>
+        </footer>
+    </article>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+{% endblock %}

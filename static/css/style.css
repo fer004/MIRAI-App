@@ -1,0 +1,335 @@
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    background-color: #b2c4dd;
+}
+
+.main-container{
+    display: block;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    height: 80px;
+    border: solid 3px #798fad;
+    border-radius: 10px;
+    background-color: #798fad;
+    padding: 0 20px; /* Espacio interno horizontal */
+}
+
+header .logo img {
+    width: 75px;
+    height: 75px;
+}
+
+header .title {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+header .logout {
+    border: 2px solid #0057a8;
+    border-radius: 5px;
+    background-color: #0057a8;
+}
+
+header .logout a {
+    display: inline-block;
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+aside {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    margin-top: 15px;
+    height: 480px; /* Altura fija para evitar que el aside crezca */
+    box-sizing: border-box;
+}
+.metadata{
+    height: 300px;
+    border: solid 3px #798fad;
+    border-radius: 10px;
+    background-color: #c8d7ed;
+    padding: 5px;
+}
+.manager {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 155px;
+    border: solid 3px #798fad;
+    border-radius: 10px;
+    background-color: #c8d7ed;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.manager .drop-zone{
+    display: flex;
+    height: 100%;
+}
+.manager .drop-zone input[type="file"] {
+    display: none;
+}
+.manager .drop-zone:hover{
+    background-color: #366699;
+}
+
+
+.manager .pdf-input input[type="file"]::file-selector-button {
+    background-color: #798fad;
+    color: white;
+    border: 5px solid #798fad;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    height: 30px;
+    padding: 5px;
+}
+.manager .pdf-input input[type="file"]::file-selector-button:hover {
+    background-color: #366699;
+    border:5px solid #366699;
+}
+
+.manager .pdf-input button[type="submit"]{
+    background-color: #798fad;
+    margin-top: 2px;
+    color: white;
+    border: 5px solid #798fad;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    height: 30px;
+    padding: 5px;
+}
+.manager .pdf-input button[type="submit"]:hover{
+    background-color: #366699;
+    border:5px solid #366699;
+}
+
+
+/* --- New CSS for JSON results display --- */
+#dockerResults pre {
+    white-space: pre-wrap;   /* Allows text to wrap within the pre block */
+    word-wrap: break-word;   /* Forces breaking of long words */
+    overflow-x: auto;        /* Adds horizontal scrollbar if content still overflows (e.g., a very long URL) */
+    max-height: 200px;       /* Optional: Set a max height to allow vertical scrolling */
+    overflow-y: auto;        /* Adds vertical scrollbar if content exceeds max-height */
+    padding: 15px;           /* Some padding around the JSON */
+    margin-top: -50px;
+    border: 1px solid #798fad; /* A subtle border */
+    border-radius: 8px;      /* Slightly rounded corners */
+    background-color: #e0ecf7; /* A lighter background for the code block */
+    box-sizing: border-box;  /* Ensures padding and border are included in the element's total size */
+    font-family: 'Consolas', 'Monaco', monospace; /* Monospaced font for code */
+    font-size: 13px;         /* Slightly smaller font for code */
+    color: #333;             /* Darker text for readability */
+}
+
+/* You might also want to adjust the .results container itself to manage space */
+.results {
+    /* Assuming this is the container for the button and the JSON output */
+    display: flex;
+    flex-direction: row; /* Stack children vertically */
+    gap: 15px; /* Space between the button and the pre tag */
+    /* Add any other styling for .results if needed */
+}
+
+/* Adjust the styling for the "Process DICOMs Recientes" button inside the results block */
+/* This ensures it looks consistent with other drop-zone elements while being within the results */
+.results .drop-zone {
+    /* Inherit some main drop-zone styles but allow for results specific overrides */
+    min-height: 50px; /* Adjust height for the button */
+    padding: 0; /* Remove internal padding if button fills it */
+    cursor: pointer; /* Ensure cursor is pointer */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Ensure text is centered */
+}
+
+.results .drop-zone button {
+    /* Style the actual button element inside the drop-zone */
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: inherit; /* Inherit cursor from parent .drop-zone */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Add some padding inside the button */
+    box-sizing: border-box;
+}
+
+.results .drop-zone__prompt {
+    /* Ensure the text is visible and styled */
+    color: #366699; /* Example color, adjust to your theme */
+    font-weight: bold;
+}
+
+.results .drop-zone:hover .drop-zone__prompt {
+    color: white; /* Change text color on hover */
+}
+
+article {
+    display: inline-block;
+    width: 68%; /* Reducido un poco para evitar salto de línea */
+    vertical-align: top;
+    margin-top: 15px;
+    box-sizing: border-box;
+}
+.display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    border: solid 3px #798fad;
+    border-radius: 10px;
+    background-color: #c8d7ed;
+    text-align: center;
+}
+
+.display > .results{
+    width: 200px;
+    height: 100px;
+}
+
+.planes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: solid 3px #798fad;
+    border-radius: 10px;
+    background-color: #c8d7ed;
+}
+
+.planes .plane img{
+    display: inline-block;
+    margin-left: 5%;
+    height: 150px;
+    width: 150px;
+}
+
+.drop-zone {
+    background-color: #798fad;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    height: 30px; /* igual que los botones */
+    padding: 5px 0;
+    width: 100%;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease;
+}
+
+
+.drop-zone--over {
+    border-color: #004080;
+    background-color: #e0f0ff;
+    transform: scale(1.02);
+}
+
+.drop-zone__prompt {
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+
+#uploadStatus {
+    text-align: center;
+    font-size: 1.1em;
+    margin: 20px 0;
+}
+
+.preview-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.preview-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.file-name {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #666;
+    word-break: break-all;
+    text-align: center;
+}
+
+#previewContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.button-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.upload-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-button input[type="file"] {
+    display: none;
+}
+
+.upload-button label,
+.upload-button button {
+    background-color: #798fad;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    height: 30px;
+    padding: 5px 0;
+    width: 100%;
+    font-size: 13px;
+}
+
+.upload-button label:hover,
+.upload-button button:hover {
+    background-color: #366699;
+}
