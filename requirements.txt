@@ -1,0 +1,7 @@
+Flask==2.3.2 
+Flask-SQLAlchemy==3.0.3 
+pydicom==2.3.1 
+matplotlib==3.7.1
+requests==2.31.0 
+PyPDF3==1.0.6 
+ReportLab==4.0.0 
