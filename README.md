@@ -10,7 +10,7 @@ This project provides an intuitive web interface for interacting with the Mirai 
 * **Metadata Extraction:** Extracts and displays patient and study information from DICOM files. Javascript grants the necessary data to PyDicom for the precise extraction of metadata.
 * **DICOM Viewer:** Visualizes the planes of the imported DICOM images.
 * **Mirai Model Integration:** Processes DICOMs with the Mirai model to provide risk predictions. The app relies on its communication with the port exposed by the Docker container.
-* **Result Display:** Presents "High Risk" or "Low Risk" based on the 5-year risk criterion established by Avendano and associates (2024) for Mexican women. Results are generated as soon as Docker throws the model's decision.
+* **Result Display:** Presents "High Risk" or "Low Risk" based on the 5-year risk criterion established by [Avendano and associates (2024)](https://doi.org/10.1186/s13244-024-01808-3) for Mexican women. Results are generated as soon as Docker throws the model's decision.
 * **PDF Report Generation:** Generates comprehensive PDF reports of the results using PyPDF and ReportLab libraries. Javascript initiates the generation process, providing PyPDF and ReportLab libraries with the data to generate the final results PDF.
 
 ## Requirements
