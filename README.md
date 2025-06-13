@@ -1,4 +1,4 @@
-# FlaskProject - Mirai App Interface
+# Mirai App Interface
 
 This project provides an intuitive web interface for interacting with the Mirai deep learning model, designed to assist medical personnel in breast cancer risk prediction based on mammograms. The application facilitates informed decision-making by oncologists using risk data provided by the model. The app is oriented for use by medical personnel.
 
