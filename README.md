@@ -44,7 +44,7 @@ pip install -r requirements.txt
 
 ### 4. Run the Ark:Mirai Docker Container
 
-IMPORTANT: For the Mirai App interface to function correctly, you must have the Ark:Mirai Docker image running and exposed on port 5000. This application specifically uses the Ark:Mirai version of the model, which was the criterion used in the validating study for Mexican women.
+IMPORTANT: For the Mirai App interface to function correctly, you must have the [Ark:Mirai Docker image](https://drive.google.com/file/d/1z30j1oG4UiMqgkUs1tfaBQLJ2Cp930vM/view) running and exposed on port 5000. This application specifically uses the Ark:Mirai version of the model, which was the criterion used in the validating study for Mexican women.
 ```bash
 docker load -i ark_mirai.tar
 docker run -p 5000:5000 --name mirai-ark-model ark-mirai-image-name # Replace 'ark-mirai-image-name' with the actual name of your Ark:Mirai image
