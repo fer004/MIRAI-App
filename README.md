@@ -54,10 +54,10 @@ docker run -p 5000:5000 --name mirai-ark-model ark-mirai-image-name # Replace 'a
 python app.py
 ```
 ## Team members
-* **Fernando José Domínguez Morales
-* **Juan Pablo Rosado Aíza
-* **Andrea Florencia Ochoa Tiscareño
-* **Sara Guadalupe López Matus
-* **Santiago Alonso Mendoza Franco 
+* Fernando José Domínguez Morales
+* Juan Pablo Rosado Aíza
+* Andrea Florencia Ochoa Tiscareño
+* Sara Guadalupe López Matus
+* Santiago Alonso Mendoza Franco 
 
 
